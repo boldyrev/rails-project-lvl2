@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title
+      | RailsProjectLvl2
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    p.notice = notice
+    p.alert = alert
+    - unless user_signed_in?
+      p = link_to 'Sign in', new_user_session_path
+      p = link_to 'Register', new_user_registration_path
+    - else
+      p = link_to 'Sign out', destroy_user_session_path, method: :delete
+
+    = yield
