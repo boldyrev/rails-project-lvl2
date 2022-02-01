@@ -1,20 +1,14 @@
 doctype html
-html
+html.h-100
   head
-    title
-      | RailsProjectLvl2
-    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    title RailsProjectLvl2
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  body
-    p.notice = notice
-    p.alert = alert
-    - unless user_signed_in?
-      p = link_to 'Sign in', new_user_session_path
-      p = link_to 'Register', new_user_registration_path
-    - else
-      p = link_to 'Sign out', destroy_user_session_path, method: :delete
-
-    = yield
+  body.d-flex.flex-column.h-100
+    = render 'shared/nav'
+    main.flex-shrink-0
+      .container
+        = yield
+    = render 'shared/footer'
