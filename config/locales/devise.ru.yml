@@ -4,3 +4,16 @@ ru:
       user:
         signed_in: "Вход выполнен"
         signed_out: "Вы успешно вышли из системы"
+      title: "Вход"
+      login_button: "Войти"
+    links:
+      sign_up: "Регистрация"
+      login: "Вход"
+      forgot_password: "Забыли пароль?"
+    registrations:
+      title: "Регистрация"
+      signup_button: "Зарегистрироваться"
+    failure:
+      user:
+        invalid: "Некорректный Email"
+        not_found_in_database: "Пользователь с таким Email не найден"

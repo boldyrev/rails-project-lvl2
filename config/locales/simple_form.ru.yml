@@ -1,0 +1,9 @@
+ru:
+  simple_form:
+    labels:
+      user:
+        password: 'Пароль'
+        remember_me: "Запомнить меня"
+        password_confirmation: "Подтверждение пароля"
+    error_notification:
+      default_message: "Пожалуйста исправьте ошибки"
