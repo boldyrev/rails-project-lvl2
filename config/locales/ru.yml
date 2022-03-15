@@ -1,0 +1,6 @@
+ru:
+  site_title: "Коллективный блог"
+  nav:
+    login: "Вход"
+    signup: "Регистрация"
+    signout: "Выход"
