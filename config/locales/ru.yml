@@ -4,3 +4,14 @@ ru:
     login: "Вход"
     signup: "Регистрация"
     signout: "Выход"
+    new_post: "Добавить статью"
+  home:
+    index:
+      title: "Список статей"
+  post:
+    success: "Статья добавлена"
+  posts:
+    new:
+      title: "Новая статья"
+    form:
+      submit: "Добавить"

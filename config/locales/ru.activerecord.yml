@@ -1,9 +1,15 @@
 ru:
   activerecord:
+    models:
+      post: "Статья"
     attributes:
       user:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      post:
+        title: "Заголовок"
+        body: "Содержание"
+        post_category: "Категория"
     errors:
       models:
         user:

@@ -1,2 +1,8 @@
-h1.mt-5 Home#index
-p.lead Find me in app/views/home/index.html.slim
+h1 = t('.title')
+.row
+  - @posts.each do |post|
+    .col-md-12
+      .card.mb-3
+        .card-body
+          h2.h5.card-title = link_to post.title, post, class: 'link-dark text-decoration-none'
+          p.card-text.mb-2 = post.body
