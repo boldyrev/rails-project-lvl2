@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :users
 
-  resources :posts, only: %i[show new create]
+  resources :posts, only: %i[show new create] do
+    resources :comments, only: :create
+  end
 end

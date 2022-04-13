@@ -15,3 +15,10 @@ ru:
       title: "Новая статья"
     form:
       submit: "Добавить"
+    show:
+      comment:
+        response: "Ответить"
+  comment:
+    title: "Комментарий"
+    add: "Добавить комментарий"
+    success: "Комментарий добавлен"

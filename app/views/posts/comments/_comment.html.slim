@@ -1,0 +1,19 @@
+.card.mt-4
+  .card-header
+    p.card-text
+      div id="comment-#{comment.id}"
+        = comment.user.email
+        span.small.ms-4 = comment.created_at.strftime('%d.%m.%y %H:%M')
+  .card-body
+    p.card-text = comment.content
+
+    hr
+
+    a class="text-muted" data-bs-toggle="collapse" href="#new_post_comment-#{comment.id}" aria-expanded="true" aria-controls="new_post_comment-#{comment.id}"
+      = t('posts.show.comment.response')
+
+    div id="new_post_comment-#{comment.id}" class="collapse" data-bs-target="new_post_comment-#{comment.id}"
+      = render 'posts/comments/form', comment: comment.children.new, parent_id: comment.id, url: post_comments_url(comment.post)
+
+    - comment.children.each do |child_comment|
+      = render 'posts/comments/comment', comment: child_comment
