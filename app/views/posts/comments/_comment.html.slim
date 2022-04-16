@@ -9,7 +9,6 @@
 
     hr
 
-    / = link_to t('posts.show.comment.response')
     - href = "new_post_comment-#{comment.id}"
     a.text-muted data-bs-toggle="collapse" href="##{href}" aria-expanded="true" aria-controls="#{href}"
       = t('posts.show.comment.response')
