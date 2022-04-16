@@ -9,11 +9,14 @@
 
     hr
 
-    a class="text-muted" data-bs-toggle="collapse" href="#new_post_comment-#{comment.id}" aria-expanded="true" aria-controls="new_post_comment-#{comment.id}"
+    / = link_to t('posts.show.comment.response')
+    - href = "new_post_comment-#{comment.id}"
+    a.text-muted data-bs-toggle="collapse" href="##{href}" aria-expanded="true" aria-controls="#{href}"
       = t('posts.show.comment.response')
 
-    div id="new_post_comment-#{comment.id}" class="collapse" data-bs-target="new_post_comment-#{comment.id}"
-      = render 'posts/comments/form', comment: comment.children.new, parent_id: comment.id, url: post_comments_url(comment.post)
+    .collapse id="new_post_comment-#{comment.id}" data-bs-target="new_post_comment-#{comment.id}"
+      = render 'posts/comments/form', comment: comment.children.new, parent_id: comment.id,
+        url: post_comments_url(comment.post)
 
     - comment.children.each do |child_comment|
       = render 'posts/comments/comment', comment: child_comment

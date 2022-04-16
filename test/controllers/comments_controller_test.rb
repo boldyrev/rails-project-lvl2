@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
@@ -11,7 +13,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create comment' do
-    post post_comments_path(@post), params: { post_comment: { content: @comment.content }}
+    post post_comments_path(@post), params: { post_comment: { content: @comment.content } }
 
     created_comment = PostComment.find_by(
       content: @comment.content,
