@@ -1,7 +1,17 @@
 h1 = @post.title
 
 p = @post.body
-p = @post.creator.email
+
+.row.mb-2
+  .col-auto.me-auto = @post.creator.email
+  .col-auto
+    = @post.likes.count
+    - if @user_like
+        = link_to post_like_path(@post), method: :delete do
+          i.bi.bi-hand-thumbs-up-fill.text-reset
+    - else
+        = link_to post_likes_path(@post), method: :post do
+          i.bi.bi-hand-thumbs-up.text-reset
 
 - if user_signed_in?
   .lead.mb-3 = t('comment.title')

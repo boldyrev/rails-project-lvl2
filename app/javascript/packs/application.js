@@ -8,6 +8,8 @@ import "bootstrap";
 import * as ActiveStorage from "@rails/activestorage";
 import "../stylesheets/application.scss";
 import "channels";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 Rails.start();
 Turbolinks.start();

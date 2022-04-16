@@ -11,3 +11,9 @@ two:
   body: BodyTwo
   creator: two
   post_category: two
+
+without_like:
+  title: Without like post
+  body: Without like post
+  creator: one
+  post_category: one
