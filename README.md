@@ -9,7 +9,7 @@
 
 ### How to install
 ```bash
-bundle install
+make install
 ```
 
 ### How to run
