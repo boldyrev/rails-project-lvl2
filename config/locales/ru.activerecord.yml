@@ -10,6 +10,8 @@ ru:
         title: "Заголовок"
         body: "Содержание"
         post_category: "Категория"
+      post_comment:
+        content: "Комментарий"
     errors:
       models:
         user:
@@ -22,3 +24,15 @@ ru:
               too_short: "слижком короткий"
             password_confirmation:
               confirmation: "и пароль не совпадают"
+        post:
+          attributes:
+            title:
+              blank: "не может быть пустым"
+            body:
+              blank: "не может быть пустым"
+            post_category:
+              required: "не может быть пустой"
+        post_comment:
+          attributes:
+            content:
+              blank: "не может быть пустым"

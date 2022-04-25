@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to post, notice: t('comment.success')
     else
-      redirect_to post, status: :unprocessable_entity
+      redirect_to post_path(post), alert: comment.errors.full_messages.first
     end
   end
 

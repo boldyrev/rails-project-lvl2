@@ -5,4 +5,12 @@ h1 = t('.title')
       .card.mb-3
         .card-body
           h2.h5.card-title = link_to post.title, post, class: 'link-dark text-decoration-none'
-          p.card-text.mb-2 = post.body
+          p.card-text.mb-4 = post.body
+          p.card-text.mb-2 = post.created_at.strftime('%d.%m.%y')
+          .row.mb-2
+            .col-auto.me-auto = post.creator.email
+            .col-auto
+              - unless post.likes.count.zero?
+                = post.likes.count
+                i.bi.bi-hand-thumbs-up.text-reset
+
