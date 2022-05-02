@@ -36,3 +36,7 @@ ru:
           attributes:
             content:
               blank: "не может быть пустым"
+        post_category:
+          attributes:
+            name:
+              blank: "не может быть пустым"
