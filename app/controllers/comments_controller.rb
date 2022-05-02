@@ -5,9 +5,8 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    comment = PostComment.new(post_comment_params)
+    comment = current_user.comments.build(post_comment_params)
     comment.post = post
-    comment.user = current_user
 
     if comment.save
       redirect_to post, notice: t('comment.success')

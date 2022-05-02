@@ -13,10 +13,11 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create comment' do
-    post post_comments_path(@post), params: { post_comment: { content: @comment.content } }
+    content = Faker::Lorem.sentence
+    post post_comments_path(@post), params: { post_comment: { content: content } }
 
     created_comment = PostComment.find_by(
-      content: @comment.content,
+      content: content,
       user: @user,
       post: @post
     )

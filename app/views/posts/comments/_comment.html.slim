@@ -15,7 +15,7 @@
 
     .collapse id="new_post_comment-#{comment.id}" data-bs-target="new_post_comment-#{comment.id}"
       = render 'posts/comments/form', comment: comment.children.new, parent_id: comment.id,
-        url: post_comments_url(comment.post)
+        url: post_comments_url(post)
 
-    - comment.children.each do |child_comment|
-      = render 'posts/comments/comment', comment: child_comment
+    - children.each do |child_comment, subchild|
+      = render 'posts/comments/comment', post: post, comment: child_comment, children: subchild

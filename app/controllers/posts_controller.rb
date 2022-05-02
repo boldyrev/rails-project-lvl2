@@ -8,8 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.creator = current_user
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to root_url, notice: t('post.success')
@@ -19,9 +18,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:creator, :likes).find(params[:id])
     @comment = PostComment.new
-    @user_like = @post.likes.find_by(user: current_user)
+    @comments = @post.comments.includes(:user).arrange
+    @was_liked = @post.likes.find { |like| like.user_id == current_user&.id }.present?
   end
 
   private
