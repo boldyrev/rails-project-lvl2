@@ -10,8 +10,8 @@ h1 = t('.title')
           .row.mb-2
             .col-auto.me-auto = post.creator.email
             .col-auto
-              - unless post.likes.count.zero?
-                = post.likes.count
+              - unless post.likes.size.zero?
+                = post.likes.size
                 i.bi.bi-hand-thumbs-up.text-reset
 
 = paginate(@posts)
