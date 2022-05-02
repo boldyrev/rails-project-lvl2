@@ -13,3 +13,5 @@ h1 = t('.title')
               - unless post.likes.count.zero?
                 = post.likes.count
                 i.bi.bi-hand-thumbs-up.text-reset
+
+= paginate(@posts)

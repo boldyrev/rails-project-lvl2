@@ -7,4 +7,6 @@ class Post < ApplicationRecord
   has_many :likes, class_name: 'PostLike', dependent: :destroy
 
   validates :title, :body, presence: true
+
+  paginates_per 10
 end
