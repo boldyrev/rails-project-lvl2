@@ -11,7 +11,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @params = {
       title: Faker::Lorem.sentence,
       body: Faker::Lorem.paragraph,
-      post_category_id: @post.post_category.id
+      category_id: @post.category.id
     }
   end
 

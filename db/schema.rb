@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_14_101011) do
+ActiveRecord::Schema.define(version: 2022_05_02_052135) do
 
-  create_table "post_categories", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2022_04_14_101011) do
     t.string "title"
     t.text "body"
     t.integer "user_id", null: false
-    t.integer "post_category_id", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_category_id"], name: "index_posts_on_post_category_id"
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -66,6 +66,6 @@ ActiveRecord::Schema.define(version: 2022_04_14_101011) do
   add_foreign_key "post_comments", "users"
   add_foreign_key "post_likes", "posts"
   add_foreign_key "post_likes", "users"
-  add_foreign_key "posts", "post_categories"
+  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
 end

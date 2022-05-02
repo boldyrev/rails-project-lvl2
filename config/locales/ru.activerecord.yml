@@ -9,7 +9,7 @@ ru:
       post:
         title: "Заголовок"
         body: "Содержание"
-        post_category: "Категория"
+        category: "Категория"
       post_comment:
         content: "Комментарий"
     errors:
@@ -30,13 +30,13 @@ ru:
               blank: "не может быть пустым"
             body:
               blank: "не может быть пустым"
-            post_category:
+            category:
               required: "не может быть пустой"
         post_comment:
           attributes:
             content:
               blank: "не может быть пустым"
-        post_category:
+        category:
           attributes:
             name:
               blank: "не может быть пустым"
